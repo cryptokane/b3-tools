@@ -1,0 +1,14 @@
+Steps to upgrade:
+
+1. Login into your VPS as root
+2. git clone https://github.com/cryptokane/b3-provision.git
+3. cd b3-provision/
+4. chmod +x b3.upgrade.sh
+5. ./b3.upgrade.sh
+6. ./b3coind stop from the directory your current b3coind exists
+7. cp b3coind b3coind.bak (from location where you run the wallet from)
+8. cp ~/.B3-CoinV2/wallet.dat ~/.B3-CoinV2/wallet.bak
+9. cp /root/B3-CoinV2/src/b3coind /path/to/existing/b3coind
+10. go to the directory of your b3coind
+11. ./b3coind
+12. ./b3coind fundamentalnode start password (if you encrypted the wallet)
