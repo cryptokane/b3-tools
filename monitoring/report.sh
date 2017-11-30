@@ -18,8 +18,8 @@ declare -a wins=(
         ""
         )
 
-echo "NODE INFO"
 echo ""
+echo "NODE INFO"
 
 for i in "${fmns[@]}"
 do
@@ -34,8 +34,12 @@ do
 done
 
 echo ""
+echo "-------------------------------------------------------"
+echo ""
 echo "RECENT WINNERS"
+echo "-------------------------------------------------------"
+echo ""
 for w in "${wins[@]}"
 do
-	ssh $USER@$i "./b3coind fundamentalnode winners | grep $w"
+	ssh $USER@"${fmns[0]}" "./b3coind fundamentalnode winners | grep $w"
 done
