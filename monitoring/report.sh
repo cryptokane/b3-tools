@@ -24,13 +24,12 @@ echo ""
 for i in "${fmns[@]}"
 do
 	echo "-------------------------------------------------------"
+	echo ""
 	echo -n "        NODE      " && ssh $USER@$i "hostname"
 	echo -n "      STATUS  " && ssh $USER@$i "./b3coind fundamentalnodelist | grep $i"
 	echo -n "        RANK  " && ssh $USER@$i "./b3coind fundamentalnodelist rank | grep $i"
 	echo -n "      UPTIME  " && ssh $USER@$i "./b3coind fundamentalnodelist activeseconds | grep $i"
 	echo -n "      HEIGHT      " && ssh $USER@$i "./b3coind getblockcount"
-	echo ""
-	echo "-------------------------------------------------------"
 	echo ""
 done
 
